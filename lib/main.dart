@@ -32,10 +32,17 @@ class MainApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                const Image(image: AssetImage('assets/hip-hop img.png'), width: 220,),
-                const Text('Parças Urbanos', style: TextStyle(backgroundColor:Colors.black, color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w100),),
+                const Text('Parças Urbanos', style: TextStyle(
+                  backgroundColor:Colors.black, 
+                  color: Colors.white, 
+                  fontSize: 35.0, 
+                  fontWeight: FontWeight.w100,
+                  ),
+                ),
                 
                 /// primeiro button leva aos widget Entrar
-                ElevatedButton(
+                ButtonTheme( minWidth: 30.6, height: 400.0, 
+                child: ElevatedButton(
                   onPressed:(){
                   Navigator.push(
                     context, 
@@ -45,8 +52,8 @@ class MainApp extends StatelessWidget {
                 },
                 /// add cor no button, usando da class ButtonStyle
                 style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),),
-                child: const Text('ENTRAR', style: TextStyle(color: Colors.white),)),
+                backgroundColor: WidgetStatePropertyAll<Color>(Colors.black),),
+                child: const Text('ENTRAR', style: TextStyle(color: Colors.white),),),),
                 
                 /// segundo button, leva ao widget Músicas
                 ElevatedButton(onPressed: (){
@@ -57,7 +64,7 @@ class MainApp extends StatelessWidget {
                   );
                 },
                 style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),),
+                backgroundColor: WidgetStatePropertyAll<Color>(Colors.black),),
                 child: const Text('MÚSICAS', style: TextStyle(color: Colors.white),)),
             ],
             ),

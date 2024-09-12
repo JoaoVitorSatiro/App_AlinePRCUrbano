@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const TelaMusica());
@@ -7,6 +8,8 @@ void main() {
 
 class TelaMusica extends StatelessWidget {
   const TelaMusica({super.key});
+
+
 
   @override
 Widget build(BuildContext context) {
@@ -61,7 +64,8 @@ Widget build(BuildContext context) {
                   GestureDetector(
                     onTap: () {
                       // Link de navegação para o YouTube
-                      _launchURL('https://www.youtube.com/watch?v=HvC96EaQDmU');
+                      Uri end = Uri.parse('https://www.youtube.com/watch?v=HvC96EaQDmU');
+                      launchUrl(end);
                     },
                     child: Container(
                       width: 150,
@@ -92,12 +96,13 @@ Widget build(BuildContext context) {
                   GestureDetector(
                     onTap: () {
                       // Link de navegação para o YouTube
-                      _launchURL('https://www.youtube.com/watch?v=h4UqMyldS7Q');
+                      Uri end = Uri.parse('https://www.youtube.com/watch?v=h4UqMyldS7Q');
+                      launchUrl(end);
                     },
                     child: Container(
                       width: 150,
                       height: 250,
-                      color: const Color.fromARGB(255, 98, 15, 112),
+                      color: const Color.fromARGB(255, 16, 255, 243),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -152,7 +157,8 @@ Widget build(BuildContext context) {
                   GestureDetector(
                     onTap: () {
                       // Link de navegação para o YouTube
-                      _launchURL('h1ttps://www.youtube.com/watch?v=5gLoEBbZNis');
+                     Uri end = Uri.parse('https://youtu.be/H1HdZFgR-aA?t=4');
+                     _launchURL(end);
                     },
                     child: Container(
                       width: 150,
@@ -183,9 +189,14 @@ Widget build(BuildContext context) {
                   GestureDetector(
                     onTap: () {
                       // Link de navegação para o YouTube
-                     _launchURL('https://www.youtube.com/watch?v=Do5MMmEygsY');
+                      Uri end = Uri.parse('https://www.youtube.com/watch?v=Do5MMmEygsY');
+                     _launchURL(end);
                     },
                     
+                    child: Container(
+                      width: 150,
+                      height: 250,
+                      color: const Color.fromARGB(255, 98, 15, 112),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -206,6 +217,7 @@ Widget build(BuildContext context) {
                           ),
                         ],
                       ),
+                      ),
                     ),
                 ],
               ),
@@ -218,16 +230,9 @@ Widget build(BuildContext context) {
 }
 
 // Função para abrir o URL no navegador padrão
-void _launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
+Future<void> _launchURL(Uri url) async {
+  if (!await  launchUrl( url)) {
     throw 'Could not launch $url';
   }
-}
+  }
 
-launch(String url) {
-}
-
-canLaunch(String url) {
-}
