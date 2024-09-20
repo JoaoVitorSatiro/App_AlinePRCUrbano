@@ -10,7 +10,4 @@
 - Colocado uma tela de cadastros ao clicar no botão música. Pois só é possível acessar a tela de música se haver cadastro.
 
 ## Link da Wiki
-# App_AlinePRCUrbano
-# App_AlinePRCUrbano
-# App_AlinePRCUrbano
-# App_AlinePRCUrbano
+https://github.com/JoaoVitorSatiro/App_AlinePRCUrbano/wiki
